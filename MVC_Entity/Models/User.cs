@@ -19,7 +19,7 @@ namespace MVC_Entity.Models {
         public string confirmaPassword { get; set; }
         //this should be a drop downlist
         public int perfil { get; set; }
-
+        //this is a checkbox
         public bool estado { get; set; }
     }
 }
