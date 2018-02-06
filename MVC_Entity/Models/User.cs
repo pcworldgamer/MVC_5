@@ -17,6 +17,7 @@ namespace MVC_Entity.Models {
         [Display(Name = "Confirme a sua palavra passe")]
         [Compare("password", ErrorMessage = "Palavras passe não são iguais")]
         public string confirmaPassword { get; set; }
+        //this should be a drop downlist
         public int perfil { get; set; }
 
         public bool estado { get; set; }
