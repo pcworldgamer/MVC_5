@@ -40,7 +40,13 @@ namespace MVC_Entity.Controllers
         // GET: Users/Create
         public ActionResult Create()
         {
-            return View();
+            //perfis options for the dropdownlist
+            var user = new User();
+            user.perfis = new[] {
+                new SelectListItem{Value="0",Text="Admin"},
+                new SelectListItem{Value="1",Text="User"},
+            };
+            return View(user);
         }
 
         // POST: Users/Create
@@ -60,7 +66,11 @@ namespace MVC_Entity.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-
+            //perfis options for the dropdownlist
+            user.perfis = new[] {
+                new SelectListItem{Value="0",Text="Admin"},
+                new SelectListItem{Value="1",Text="User"},
+            };
             return View(user);
         }
 
@@ -76,6 +86,11 @@ namespace MVC_Entity.Controllers
             {
                 return HttpNotFound();
             }
+            //perfis options for the dropdownlist
+            user.perfis = new[] {
+                new SelectListItem{Value="0",Text="Admin"},
+                new SelectListItem{Value="1",Text="User"},
+            };
             return View(user);
         }
 
@@ -96,6 +111,11 @@ namespace MVC_Entity.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
+            //perfis options for the dropdownlist
+            user.perfis = new[] {
+                new SelectListItem{Value="0",Text="Admin"},
+                new SelectListItem{Value="1",Text="User"},
+            };
             return View(user);
         }
 

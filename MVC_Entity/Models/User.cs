@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 namespace MVC_Entity.Models {
     public class User {
@@ -17,9 +18,12 @@ namespace MVC_Entity.Models {
         [Display(Name = "Confirme a sua palavra passe")]
         [Compare("password", ErrorMessage = "Palavras passe não são iguais")]
         public string confirmaPassword { get; set; }
-        //this should be a drop downlist
+        //this field will be a dropdownlist
         public int perfil { get; set; }
         //this is a checkbox
         public bool estado { get; set; }
+
+        //this is the items for the dropdownlist
+        public IEnumerable<System.Web.Mvc.SelectListItem> perfis { get; set; }
     }
 }
