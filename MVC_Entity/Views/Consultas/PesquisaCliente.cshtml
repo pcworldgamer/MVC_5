@@ -1,0 +1,10 @@
+﻿
+@{
+    ViewBag.Title = "PesquisaCliente";
+}
+
+<h2>PesquisaCliente</h2>
+
+@foreach(var item in ViewBag.clientes) {
+    @Html.Raw(item.nome) <span>|</span> @Html.ActionLink("Ver estadias","ListaEstadias",new { id = item.ClientId }) <br/>
+}

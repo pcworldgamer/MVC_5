@@ -1,0 +1,41 @@
+﻿
+@{
+    ViewBag.Title = "PesquisaDinamica";
+}
+
+<h2>PesquisaDinamica</h2>
+
+<form method="post" id="formPesquisa">
+    Nome: <input type="text" name="nome" id="tbnome" />
+    <input type="submit" value="Pesquisar" />
+</form>
+
+<div id="divClientes"></div>
+
+<script>
+    window.onload = function () {
+        $("#formPesquisa").submit(function (event) {
+            carregaDados();
+            event.preventDefault();
+        });
+        $("#tbnome").on("input", function (event) {
+            carregaDados();
+        });
+    }
+
+    function carregaDados() {
+        $("#divClientes").empty();
+        if ($("#tbnome").val() == "") return;
+        $.ajax({
+            type: "GET",
+            url: "PesquisaNome",
+            data: "nome=" + $("#tbnome").val(),
+            success: function (dados) {
+                for (var i = 0; i < dados.length; i++) {
+                    $("#divClientes").append("<p>"+dados[i].nome+"</p>");
+                }
+            }
+        });
+        
+    }
+</script>
