@@ -150,7 +150,10 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\ClientsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\LoginController.cs" />
+    <Compile Include="Controllers\LogoutController.cs" />
     <Compile Include="Controllers\RoomsController.cs" />
+    <Compile Include="Controllers\StaysController.cs" />
     <Compile Include="Controllers\UsersController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -167,10 +170,16 @@
     <Compile Include="Migrations\201802191152226_clients.Designer.cs">
       <DependentUpon>201802191152226_clients.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201802201750197_stay.cs" />
+    <Compile Include="Migrations\201802201750197_stay.Designer.cs">
+      <DependentUpon>201802201750197_stay.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\AppRoleProvider.cs" />
     <Compile Include="Models\Client.cs" />
     <Compile Include="Models\MVC_EntityContext.cs" />
     <Compile Include="Models\Room.cs" />
+    <Compile Include="Models\Stay.cs" />
     <Compile Include="Models\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -226,10 +235,18 @@
     <Content Include="Views\Clients\Details.cshtml" />
     <Content Include="Views\Clients\Edit.cshtml" />
     <Content Include="Views\Clients\Index.cshtml" />
+    <Content Include="Views\Stays\Create.cshtml" />
+    <Content Include="Views\Stays\Delete.cshtml" />
+    <Content Include="Views\Stays\Details.cshtml" />
+    <Content Include="Views\Stays\ExitStay.cshtml" />
+    <Content Include="Views\Stays\Index.cshtml" />
+    <Content Include="Views\Stays\ListStays.cshtml" />
+    <Content Include="Views\Login\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Images\" />
+    <Folder Include="Views\Logout\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
@@ -253,6 +270,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201802191152226_clients.resx">
       <DependentUpon>201802191152226_clients.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201802201750197_stay.resx">
+      <DependentUpon>201802201750197_stay.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

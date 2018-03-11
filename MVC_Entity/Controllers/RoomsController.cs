@@ -10,6 +10,7 @@ using MVC_Entity.Models;
 
 namespace MVC_Entity.Controllers
 {
+    [Authorize]
     public class RoomsController : Controller
     {
         private MVC_EntityContext db = new MVC_EntityContext();

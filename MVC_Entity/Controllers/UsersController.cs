@@ -12,6 +12,7 @@ using MVC_Entity.Models;
 
 namespace MVC_Entity.Controllers
 {
+    [Authorize(Roles ="admin")]
     public class UsersController : Controller
     {
         private MVC_EntityContext db = new MVC_EntityContext();

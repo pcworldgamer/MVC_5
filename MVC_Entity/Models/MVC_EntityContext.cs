@@ -22,6 +22,6 @@ namespace MVC_Entity.Models
         public System.Data.Entity.DbSet<MVC_Entity.Models.User> Users { get; set; }
         public DbSet<MVC_Entity.Models.Room> Rooms { get; set; }
         public DbSet<MVC_Entity.Models.Client> Clients { get; set; }
-        public DbSet<CheckInOut> CheckInOuts { get; set; }
+        public DbSet<Stay> Stays { get; set; }
     }
 }

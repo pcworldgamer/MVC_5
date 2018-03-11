@@ -1,0 +1,58 @@
+﻿@model MVC_Entity.Models.Stay
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Stay</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.client.nome)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.client.nome)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.room.nr)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.room.nr)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EntryDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EntryDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ExitDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ExitDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.cost_paid)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.cost_paid)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.StayId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

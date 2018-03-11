@@ -1,0 +1,55 @@
+﻿@model IEnumerable<MVC_Entity.Models.Stay>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("New entry", "Create") | @Html.ActionLink("Exit","ListStays")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.client.nome)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.room.nr)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EntryDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ExitDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.cost_paid)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.client.nome)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.room.nr)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EntryDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ExitDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.cost_paid)
+        </td>
+        <td>
+            @Html.ActionLink("Delete", "Delete", new { id=item.StayId })
+        </td>
+    </tr>
+}
+
+</table>

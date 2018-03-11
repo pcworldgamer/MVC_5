@@ -16,7 +16,7 @@ namespace MVC_Entity.Models {
         public int lotacao { get; set; }
 
         [Required(ErrorMessage = "Deve indicar o estado do quarto")]
-        public bool estado { get; set; }
+        public bool estado { get; set; }    //false room occupied true room available
 
         [DataType(DataType.Currency)]
         [Required(ErrorMessage = "Deve indicar o preço por dia do quarto")]
